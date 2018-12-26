@@ -1,5 +1,6 @@
 --查询出所有已完成的配对
 --配对的guid和分值
+create view v_group_finshed as 
  SELECT t.group_guid,
     k.name,
     avg(k.value) AS value
@@ -13,6 +14,7 @@
 
 
  --查询所有包含已有卡牌，但还未完成的配对
+create view v_group_notfinshed as 
  SELECT t.group_guid,
     k.name,
     avg(k.value) AS value
